@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Invierta — Asesores de Inversión</title>
+<meta name="description" content="Invierta. Asesores de Inversión en Venezuela desde 2009.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400&family=EB+Garamond:wght@400&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#E9EBE7;
+    --ink:#14202A;
+    --ink-dim:#5E6A72;
+    --brass:#8A6A38;
+    --hair:rgba(138,106,56,.42);
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html,body{height:100%}
+  body{
+    background:var(--paper);
+    color:var(--ink);
+    font-family:"EB Garamond",Georgia,serif;
+    min-height:100svh;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    padding:clamp(1.5rem,5vw,3rem);
+    -webkit-font-smoothing:antialiased;
+  }
+  .frame{
+    position:fixed;
+    inset:clamp(.75rem,2.2vw,1.5rem);
+    border:1px solid rgba(138,106,56,.30);
+    pointer-events:none;
+  }
+  .frame::after{
+    content:"";
+    position:absolute;
+    inset:5px;
+    border:1px solid rgba(138,106,56,.15);
+  }
+  main{
+    position:relative;
+    text-align:center;
+    max-width:44rem;
+    width:100%;
+  }
+  .mark{
+    font-family:"Cormorant Garamond",Didot,Georgia,serif;
+    font-weight:300;
+    font-size:clamp(2.9rem,10.5vw,6.5rem);
+    letter-spacing:clamp(.14em,1.4vw,.26em);
+    text-indent:clamp(.14em,1.4vw,.26em);
+    line-height:1;
+    color:var(--ink);
+  }
+  .rule{
+    display:flex;
+    align-items:center;
+    gap:clamp(1rem,3vw,1.75rem);
+    margin:clamp(1.5rem,4vh,2.25rem) 0 clamp(1.1rem,3vh,1.5rem);
+  }
+  .rule::before,.rule::after{
+    content:"";
+    flex:1;
+    height:1px;
+    background:var(--hair);
+  }
+  .rule span{
+    font-family:"EB Garamond",Georgia,serif;
+    font-size:clamp(.72rem,1.5vw,.85rem);
+    letter-spacing:.34em;
+    text-indent:.34em;
+    text-transform:uppercase;
+    color:var(--brass);
+    white-space:nowrap;
+  }
+  .tagline{
+    font-family:"Cormorant Garamond",Didot,Georgia,serif;
+    font-weight:400;
+    font-size:clamp(1.15rem,3.2vw,1.75rem);
+    letter-spacing:.05em;
+    color:var(--ink);
+  }
+  .contact{
+    margin-top:clamp(1.75rem,5vh,2.75rem);
+    font-size:clamp(.95rem,2vw,1.05rem);
+    letter-spacing:.02em;
+  }
+  .contact a{
+    color:var(--ink);
+    text-decoration:none;
+    border-bottom:1px solid var(--hair);
+    padding-bottom:2px;
+    transition:border-color .35s ease,color .35s ease;
+  }
+  .contact a:hover,.contact a:focus-visible{
+    color:var(--brass);
+    border-color:var(--brass);
+  }
+  a:focus-visible{outline:1px solid var(--brass);outline-offset:6px}
+  footer{
+    position:relative;
+    margin-top:clamp(3rem,10vh,6rem);
+    text-align:center;
+    font-size:clamp(.68rem,1.4vw,.78rem);
+    line-height:1.9;
+    color:var(--ink-dim);
+    letter-spacing:.03em;
+    max-width:46rem;
+  }
+  footer .legal{color:var(--ink-dim)}
+  footer .reg{color:var(--ink-dim)}
+  footer .copy{margin-top:.55rem;color:rgba(94,106,114,.72)}
+  @media (max-height:520px){
+    footer{margin-top:2rem}
+  }
+</style>
+</head>
+<body>
+  <div class="frame" aria-hidden="true"></div>
+
+  <main>
+    <h1 class="mark">INVIERTA</h1>
+
+    <div class="rule"><span>Desde 2009</span></div>
+
+    <p class="tagline">Asesores de Inversión</p>
+
+    <p class="contact">
+      <a href="mailto:contacto@invierta.partners">contacto@invierta.partners</a>
+    </p>
+  </main>
+
+  <footer>
+    <p class="legal">Invierta Asesores de Inversión, S.A. &nbsp;·&nbsp; RIF J-29556127-0</p>
+    <p class="copy">© 2009–2026 Invierta Asesores de Inversión, S.A. Todos los derechos reservados.</p>
+  </footer>
+</body>
+</html>
