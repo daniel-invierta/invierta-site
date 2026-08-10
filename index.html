@@ -1,143 +1,338 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Invierta — Asesores de Inversión</title>
-<meta name="description" content="Invierta. Asesores de Inversión en Venezuela desde 2009.">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Invierta — Banca de inversión independiente, Caracas</title>
+<meta name="description" content="Invierta Asesores de Inversión. Banca de inversión y asesoría independiente en Venezuela desde 2009. Venta de empresas, levantamiento de capital, situaciones especiales.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400&family=EB+Garamond:wght@400&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=Archivo:wght@400;500&display=swap" rel="stylesheet">
 <style>
   :root{
-    --paper:#E9EBE7;
-    --ink:#14202A;
-    --ink-dim:#5E6A72;
-    --brass:#8A6A38;
-    --hair:rgba(138,106,56,.42);
+    --paper:#F4EFE6;
+    --paper-deep:#ECE5D8;
+    --ink:#211E19;
+    --ink-soft:#6B6355;
+    --hairline:#D8D0C0;
+    --oxblood:#6E1B24;
+    --oxblood-soft:#8A2F38;
   }
   *{margin:0;padding:0;box-sizing:border-box}
-  html,body{height:100%}
+  html{scroll-behavior:smooth}
   body{
     background:var(--paper);
     color:var(--ink);
-    font-family:"EB Garamond",Georgia,serif;
-    min-height:100svh;
-    display:flex;
-    flex-direction:column;
-    align-items:center;
-    justify-content:center;
-    padding:clamp(1.5rem,5vw,3rem);
+    font-family:'EB Garamond',Georgia,serif;
+    font-size:19px;
+    line-height:1.65;
     -webkit-font-smoothing:antialiased;
   }
-  .frame{
-    position:fixed;
-    inset:clamp(.75rem,2.2vw,1.5rem);
-    border:1px solid rgba(138,106,56,.30);
-    pointer-events:none;
+  .sans{font-family:'Archivo',Helvetica,Arial,sans-serif}
+  a{color:inherit;text-decoration:none}
+  ::selection{background:var(--oxblood);color:var(--paper)}
+
+  /* ---------- Nav ---------- */
+  header{
+    position:sticky;top:0;z-index:10;
+    background:rgba(244,239,230,0.92);
+    backdrop-filter:blur(6px);
+    border-bottom:1px solid var(--ink);
   }
-  .frame::after{
-    content:"";
-    position:absolute;
-    inset:5px;
-    border:1px solid rgba(138,106,56,.15);
+  .nav{
+    max-width:1060px;margin:0 auto;
+    display:flex;justify-content:space-between;align-items:baseline;
+    padding:18px 24px;
   }
-  main{
-    position:relative;
-    text-align:center;
-    max-width:44rem;
-    width:100%;
-  }
-  .mark{
-    font-family:"Cormorant Garamond",Didot,Georgia,serif;
-    font-weight:300;
-    font-size:clamp(2.9rem,10.5vw,6.5rem);
-    letter-spacing:clamp(.14em,1.4vw,.26em);
-    text-indent:clamp(.14em,1.4vw,.26em);
-    line-height:1;
-    color:var(--ink);
-  }
-  .rule{
-    display:flex;
-    align-items:center;
-    gap:clamp(1rem,3vw,1.75rem);
-    margin:clamp(1.5rem,4vh,2.25rem) 0 clamp(1.1rem,3vh,1.5rem);
-  }
-  .rule::before,.rule::after{
-    content:"";
-    flex:1;
-    height:1px;
-    background:var(--hair);
-  }
-  .rule span{
-    font-family:"EB Garamond",Georgia,serif;
-    font-size:clamp(.72rem,1.5vw,.85rem);
-    letter-spacing:.34em;
-    text-indent:.34em;
-    text-transform:uppercase;
-    color:var(--brass);
-    white-space:nowrap;
-  }
-  .tagline{
-    font-family:"Cormorant Garamond",Didot,Georgia,serif;
-    font-weight:400;
-    font-size:clamp(1.15rem,3.2vw,1.75rem);
-    letter-spacing:.05em;
-    color:var(--ink);
-  }
-  .contact{
-    margin-top:clamp(1.75rem,5vh,2.75rem);
-    font-size:clamp(.95rem,2vw,1.05rem);
-    letter-spacing:.02em;
-  }
-  .contact a{
-    color:var(--ink);
-    text-decoration:none;
-    border-bottom:1px solid var(--hair);
+  .wordmark{font-size:22px;letter-spacing:0.01em}
+  .wordmark span{color:var(--oxblood)}
+  nav.links{display:flex;gap:26px;align-items:baseline}
+  nav.links a{
+    font-family:'Archivo',sans-serif;
+    font-size:12.5px;letter-spacing:0.08em;text-transform:uppercase;
+    color:var(--ink-soft);
+    border-bottom:1px solid transparent;
     padding-bottom:2px;
-    transition:border-color .35s ease,color .35s ease;
+    transition:color .2s,border-color .2s;
   }
-  .contact a:hover,.contact a:focus-visible{
-    color:var(--brass);
-    border-color:var(--brass);
+  nav.links a:hover{color:var(--oxblood);border-color:var(--oxblood)}
+  .lang{
+    font-family:'Archivo',sans-serif;font-size:12.5px;letter-spacing:0.08em;
+    background:none;border:1px solid var(--hairline);border-radius:2px;
+    color:var(--ink-soft);padding:4px 10px;cursor:pointer;
+    transition:all .2s;
   }
-  a:focus-visible{outline:1px solid var(--brass);outline-offset:6px}
+  .lang:hover{border-color:var(--oxblood);color:var(--oxblood)}
+
+  /* ---------- Layout ---------- */
+  .wrap{max-width:1060px;margin:0 auto;padding:0 24px}
+  section{border-bottom:1px solid var(--ink)}
+  .eyebrow{
+    font-family:'Archivo',sans-serif;
+    font-size:12px;letter-spacing:0.18em;text-transform:uppercase;
+    color:var(--oxblood);margin-bottom:22px;
+  }
+
+  /* ---------- Hero ---------- */
+  .hero{padding:110px 0 90px}
+  .hero h1{
+    font-weight:400;
+    font-size:clamp(38px,5.6vw,62px);
+    line-height:1.14;
+    letter-spacing:-0.01em;
+    max-width:16ch;
+  }
+  .hero h1 em{font-style:italic;color:var(--oxblood)}
+  .hero p{
+    margin-top:30px;max-width:52ch;
+    font-size:20px;color:var(--ink-soft);
+  }
+
+  /* ---------- Firm ---------- */
+  .firm{padding:80px 0}
+  .firm-grid{display:grid;grid-template-columns:1fr 2fr;gap:48px}
+  .firm p{max-width:58ch;font-size:20px}
+  .firm p + p{margin-top:1.2em}
+
+  /* ---------- Practice ---------- */
+  .practice{padding:80px 0}
+  .row{
+    display:grid;grid-template-columns:70px 1fr 1.4fr;
+    gap:24px;align-items:baseline;
+    padding:30px 0;border-bottom:1px solid var(--hairline);
+  }
+  .row:last-child{border-bottom:none}
+  .row .num{
+    font-size:17px;color:var(--oxblood);
+    font-variant-numeric:tabular-nums;
+  }
+  .row h3{font-weight:500;font-size:26px;line-height:1.25}
+  .row p{color:var(--ink-soft);font-size:18px}
+
+  /* ---------- Approach ---------- */
+  .approach{padding:80px 0;background:var(--paper-deep)}
+  blockquote{
+    font-size:clamp(26px,3.4vw,36px);
+    line-height:1.3;font-style:italic;
+    max-width:28ch;margin-bottom:56px;
+  }
+  blockquote strong{font-style:normal;font-weight:500;color:var(--oxblood)}
+  .pillars{display:grid;grid-template-columns:repeat(3,1fr);gap:40px}
+  .pillars h3{
+    font-family:'Archivo',sans-serif;font-weight:500;
+    font-size:13px;letter-spacing:0.14em;text-transform:uppercase;
+    margin-bottom:12px;
+    padding-top:14px;border-top:1px solid var(--ink);
+  }
+  .pillars p{font-size:17.5px;color:var(--ink-soft)}
+
+  /* ---------- Contact ---------- */
+  .contact{padding:80px 0 70px;border-bottom:none}
+  .contact-grid{display:flex;justify-content:space-between;align-items:flex-end;gap:32px;flex-wrap:wrap}
+  .contact .mail{
+    font-size:clamp(24px,3.2vw,34px);
+    border-bottom:1px solid var(--ink);
+    transition:color .2s,border-color .2s;
+  }
+  .contact .mail:hover{color:var(--oxblood);border-color:var(--oxblood)}
+  .contact .place{margin-top:14px;color:var(--ink-soft);font-size:18px}
+
   footer{
-    position:relative;
-    margin-top:clamp(3rem,10vh,6rem);
-    text-align:center;
-    font-size:clamp(.68rem,1.4vw,.78rem);
-    line-height:1.9;
-    color:var(--ink-dim);
-    letter-spacing:.03em;
-    max-width:46rem;
+    border-top:1px solid var(--ink);
+    padding:22px 0 34px;
   }
-  footer .legal{color:var(--ink-dim)}
-  footer .reg{color:var(--ink-dim)}
-  footer .copy{margin-top:.55rem;color:rgba(94,106,114,.72)}
-  @media (max-height:520px){
-    footer{margin-top:2rem}
+  footer .wrap{
+    display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;
+    font-family:'Archivo',sans-serif;font-size:12px;
+    letter-spacing:0.04em;color:var(--ink-soft);
+  }
+
+  /* ---------- Motion ---------- */
+  .reveal{opacity:0;transform:translateY(14px);transition:opacity .7s ease,transform .7s ease}
+  .reveal.in{opacity:1;transform:none}
+  @media (prefers-reduced-motion: reduce){
+    html{scroll-behavior:auto}
+    .reveal{opacity:1;transform:none;transition:none}
+  }
+
+  /* ---------- Responsive ---------- */
+  @media (max-width:760px){
+    body{font-size:18px}
+    nav.links{display:none}
+    .hero{padding:70px 0 60px}
+    .firm-grid{grid-template-columns:1fr;gap:20px}
+    .row{grid-template-columns:48px 1fr;gap:14px}
+    .row p{grid-column:2}
+    .pillars{grid-template-columns:1fr;gap:28px}
   }
 </style>
 </head>
 <body>
-  <div class="frame" aria-hidden="true"></div>
 
-  <main>
-    <h1 class="mark">INVIERTA</h1>
+<header>
+  <div class="nav">
+    <a href="#top" class="wordmark">Invierta<span>.</span></a>
+    <nav class="links">
+      <a href="#firm" data-i18n="nav_firm">La firma</a>
+      <a href="#practice" data-i18n="nav_practice">Práctica</a>
+      <a href="#approach" data-i18n="nav_approach">Enfoque</a>
+      <a href="#contact" data-i18n="nav_contact">Contacto</a>
+    </nav>
+    <button class="lang" id="langBtn" aria-label="Change language">EN</button>
+  </div>
+</header>
 
-    <div class="rule"><span>Desde 2009</span></div>
+<main id="top">
 
-    <p class="tagline">Asesores de Inversión</p>
+  <section class="hero">
+    <div class="wrap reveal">
+      <p class="eyebrow" data-i18n="hero_eyebrow">Caracas · Desde 2009</p>
+      <h1 data-i18n-html="hero_h1">Banca de inversión <em>independiente</em> en Venezuela.</h1>
+      <p data-i18n="hero_sub">Originamos, estructuramos y ejecutamos transacciones: venta de empresas, levantamiento de capital y mandatos especiales.</p>
+    </div>
+  </section>
 
-    <p class="contact">
-      <a href="mailto:contacto@invierta.partners">contacto@invierta.partners</a>
-    </p>
-  </main>
+  <section class="firm" id="firm">
+    <div class="wrap firm-grid reveal">
+      <p class="eyebrow" data-i18n="firm_eyebrow">La firma</p>
+      <div>
+        <p data-i18n="firm_p1">Invierta es una boutique de asesoría independiente con sede en Caracas, registrada ante la SUNAVAL desde 2009. Hemos operado en todas las fases del ciclo del país — y ese es precisamente el punto.</p>
+        <p data-i18n="firm_p2">Nuestro trabajo une el conocimiento local con estándares institucionales: saber a quién llamar, en qué orden, y cómo estructurar lo que sigue.</p>
+      </div>
+    </div>
+  </section>
 
-  <footer>
-    <p class="legal">Invierta Asesores de Inversión, S.A. &nbsp;·&nbsp; RIF J-29556127-0</p>
-    <p class="copy">© 2009–2026 Invierta Asesores de Inversión, S.A. Todos los derechos reservados.</p>
-  </footer>
+  <section class="practice" id="practice">
+    <div class="wrap reveal">
+      <p class="eyebrow" data-i18n="practice_eyebrow">Práctica</p>
+
+      <div class="row">
+        <span class="num">I.</span>
+        <h3 data-i18n="p1_t">Banca de inversión</h3>
+        <p data-i18n="p1_d">Venta de empresas, fusiones y adquisiciones, levantamiento de capital y deuda. Mandatos de compra y de venta ejecutados de principio a fin.</p>
+      </div>
+
+      <div class="row">
+        <span class="num">II.</span>
+        <h3 data-i18n="p2_t">Originación y situaciones especiales</h3>
+        <p data-i18n="p2_d">Acceso a oportunidades fuera de mercado en sectores estratégicos — energía, infraestructura, logística — donde la relación precede a la transacción.</p>
+      </div>
+
+      <div class="row">
+        <span class="num">III.</span>
+        <h3 data-i18n="p3_t">Asesoría patrimonial y de portafolio</h3>
+        <p data-i18n="p3_d">Mandatos privados para familias y principales: construcción de portafolio, estructuras de protección y planificación multimoneda.</p>
+      </div>
+
+      <div class="row">
+        <span class="num">IV.</span>
+        <h3 data-i18n="p4_t">Vehículos de inversión</h3>
+        <p data-i18n="p4_d">Estructuración de vehículos dedicados y coinversiones — diseñados según la ventana regulatoria, el perfil de riesgo y el socio.</p>
+      </div>
+
+    </div>
+  </section>
+
+  <section class="approach" id="approach">
+    <div class="wrap reveal">
+      <p class="eyebrow" data-i18n="approach_eyebrow">Enfoque</p>
+      <blockquote data-i18n-html="quote">La ventaja no está en el riesgo que se asume, sino en cómo se <strong>estructura</strong>.</blockquote>
+      <div class="pillars">
+        <div>
+          <h3 data-i18n="pi1_t">Acceso</h3>
+          <p data-i18n="pi1_d">Dos décadas de relaciones locales — operadores, reguladores, propietarios — que revelan oportunidades antes de que lleguen al mercado.</p>
+        </div>
+        <div>
+          <h3 data-i18n="pi2_t">Protección</h3>
+          <p data-i18n="pi2_d">Estructuras diseñadas para proteger el capital primero: vehículos dedicados, escrow, valuación de terceros y cláusulas de arbitraje.</p>
+        </div>
+        <div>
+          <h3 data-i18n="pi3_t">Ejecución</h3>
+          <p data-i18n="pi3_d">Disciplina institucional en todo el proceso — KYC/AML, custodia internacional y gobernanza que las contrapartes extranjeras reconocen.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="contact" id="contact">
+    <div class="wrap contact-grid reveal">
+      <div>
+        <p class="eyebrow" data-i18n="contact_eyebrow">Contacto</p>
+        <a class="mail" href="mailto:contacto@invierta.partners">contacto@invierta.partners</a>
+        <p class="place" data-i18n="contact_place">Caracas, Venezuela</p>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>Invierta Asesores de Inversión, S.A. · RIF J-29556127-0</span>
+    <span data-i18n="footer_reg">Registrada ante SUNAVAL · © 2026</span>
+  </div>
+</footer>
+
+<script>
+const i18n = {
+  en: {
+    nav_firm:"The firm", nav_practice:"Practice", nav_approach:"Approach", nav_contact:"Contact",
+    hero_eyebrow:"Caracas · Est. 2009",
+    hero_h1:"<em>Independent</em> investment banking in Venezuela.",
+    hero_sub:"We originate, structure and execute transactions: company sales, capital raising and special mandates.",
+    firm_eyebrow:"The firm",
+    firm_p1:"Invierta is an independent advisory boutique based in Caracas, registered with SUNAVAL, Venezuela's securities regulator, since 2009. We have operated through every phase of the country's cycle — which is precisely the point.",
+    firm_p2:"Our work joins local knowledge with institutional standards: knowing who to call, in what order, and how to structure what follows.",
+    practice_eyebrow:"Practice",
+    p1_t:"Investment banking",
+    p1_d:"Company sales, mergers and acquisitions, capital and debt raising. Sell-side and buy-side mandates executed end to end.",
+    p2_t:"Origination & special situations",
+    p2_d:"Access to off-market opportunities in strategic sectors — energy, infrastructure, logistics — where the relationship precedes the transaction.",
+    p3_t:"Wealth & portfolio advisory",
+    p3_d:"Private mandates for families and principals: portfolio construction, protective structures and multi-currency planning.",
+    p4_t:"Investment vehicles",
+    p4_d:"Structuring of dedicated vehicles and co-investments — built around the regulatory window, the risk profile and the partner.",
+    approach_eyebrow:"Approach",
+    quote:"The edge is not the risk you take, but how it is <strong>structured</strong>.",
+    pi1_t:"Access",
+    pi1_d:"Two decades of local relationships — operators, regulators, owners — that surface opportunities before they reach the market.",
+    pi2_t:"Protection",
+    pi2_d:"Structures designed to protect capital first: dedicated vehicles, escrow, third-party valuation and arbitration clauses.",
+    pi3_t:"Execution",
+    pi3_d:"Institutional discipline throughout — KYC/AML, international custody and governance that foreign counterparties recognise.",
+    contact_eyebrow:"Contact",
+    contact_place:"Caracas, Venezuela",
+    footer_reg:"Registered with SUNAVAL · © 2026"
+  }
+};
+
+const es = {};
+document.querySelectorAll('[data-i18n]').forEach(el=>{ es[el.dataset.i18n]=el.textContent; });
+document.querySelectorAll('[data-i18n-html]').forEach(el=>{ es[el.dataset.i18nHtml]=el.innerHTML; });
+i18n.es = es;
+
+let lang = 'es';
+const btn = document.getElementById('langBtn');
+function setLang(l){
+  lang = l;
+  document.documentElement.lang = l;
+  document.querySelectorAll('[data-i18n]').forEach(el=>{
+    const v = i18n[l][el.dataset.i18n]; if(v) el.textContent = v;
+  });
+  document.querySelectorAll('[data-i18n-html]').forEach(el=>{
+    const v = i18n[l][el.dataset.i18nHtml]; if(v) el.innerHTML = v;
+  });
+  btn.textContent = l === 'es' ? 'EN' : 'ES';
+  document.title = l === 'es'
+    ? 'Invierta — Banca de inversión independiente, Caracas'
+    : 'Invierta — Independent investment banking, Caracas';
+}
+btn.addEventListener('click', ()=> setLang(lang === 'es' ? 'en' : 'es'));
+
+const io = new IntersectionObserver(entries=>{
+  entries.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
+},{threshold:0.12});
+document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+</script>
 </body>
 </html>
